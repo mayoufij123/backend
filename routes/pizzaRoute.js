@@ -1,0 +1,10 @@
+const express = require('express')
+const { ajoutpizza, getallpizza, modfPizza, deletPizza, uniquePizza } = require('../controllers/pizza')
+const pizzaSchema = require('../models/pizzaModel')
+const pizzaRouter = express.Router()
+pizzaRouter.get('/getpizza', getallpizza)
+pizzaRouter.post('/addpizza', ajoutpizza)
+pizzaRouter.put('/updatepizza/:id', modfPizza)
+pizzaRouter.delete('/deletepizza/:id', deletPizza)
+pizzaRouter.get('/getpizza/:id', uniquePizza)
+module.exports = pizzaRouter
